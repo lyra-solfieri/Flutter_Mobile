@@ -1,0 +1,4 @@
+#Tue Apr 20 20:29:30 BRT 2021
+base.0=/home/lira/Área de Trabalho/app_saude/app_posto_de_saudeGus/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
