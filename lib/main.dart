@@ -1,4 +1,6 @@
+import 'package:app_saude/pages/cadastro_page.dart';
 import 'package:app_saude/pages/login_page.dart';
+import 'package:app_saude/pages/inicial_page.dart';
 import 'package:flutter/material.dart';
 
 main(List<String> args) => runApp(Myapp());
@@ -9,8 +11,15 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Postinho de saude App',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => InicialPage(),
+        '/login': (context) => LoginPage(),
+        '/cadastro': (context) => CadastroPage(),
+      },
+      //home: LoginPage(),
     );
   }
 }

@@ -51,6 +51,7 @@ class LoginPage extends StatelessWidget {
         keyboardType: TextInputType.text,
         style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
+            border: OutlineInputBorder(),
             labelText: "Login",
             labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
             hintText: "Informe o login"));
@@ -64,6 +65,7 @@ class LoginPage extends StatelessWidget {
       keyboardType: TextInputType.visiblePassword,
       style: TextStyle(color: Colors.black),
       decoration: InputDecoration(
+        border: OutlineInputBorder(),
         labelText: "Senha",
         labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
         hintText: "Informe a senha",
