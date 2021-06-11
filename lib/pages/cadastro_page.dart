@@ -13,5 +13,43 @@ class CadastroPage extends StatelessWidget {
     );
   }
 
-  _body(BuildContext context) {}
+  _body(BuildContext context) {
+    return Form(
+        child: ListView(
+      children: <Widget>[
+        //nome()
+        //cpf()
+        //dataNascimento()
+        //endereço()
+        //CartãoSUs()
+      ],
+    ));
+  }
+
+  Container nomeForm() {
+    return Container(
+      padding: EdgeInsets.all(10),
+      child: TextFormField(),
+    );
+  }
+
+  Container senhaForm() {
+    return Container();
+  }
+
+  Container cpfForm() {
+    return Container();
+  }
+
+  Container enderecoForm() {
+    return Container();
+  }
+
+  Container dataNascimentoForm() {
+    return Container();
+  }
+
+  Container cartaoSusForm() {
+    return Container();
+  }
 }

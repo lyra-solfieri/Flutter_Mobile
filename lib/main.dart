@@ -1,6 +1,6 @@
 import 'package:app_saude/pages/cadastro_page.dart';
 import 'package:app_saude/pages/login_page.dart';
-import 'package:app_saude/pages/inicial_page.dart';
+import 'package:app_saude/pages/principal_page.dart';
 import 'package:flutter/material.dart';
 
 main(List<String> args) => runApp(Myapp());
@@ -15,11 +15,10 @@ class Myapp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => InicialPage(),
-        '/login': (context) => LoginPage(),
+        '/': (context) => LoginPage(),
         '/cadastro': (context) => CadastroPage(),
+        '/menu': (context) => TelaPrincipal(),
       },
-      //home: LoginPage(),
     );
   }
 }

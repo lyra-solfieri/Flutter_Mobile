@@ -4,6 +4,8 @@ class LoginPage extends StatelessWidget {
   //const LoginPage({Key key}) : super(key: key);
   final _tLogin = TextEditingController();
   final _tSenha = TextEditingController();
+  final ButtonStyle style =
+      ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -11,7 +13,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pagina de acesso ao postinho'),
+        title: Text("Postinho App"),
+        centerTitle: true,
       ),
       body: _body(context),
     );
@@ -36,41 +39,54 @@ class LoginPage extends StatelessWidget {
       key: _formKey,
       child: ListView(
         children: <Widget>[
+          Text(
+            'Postinho Garanhuns',
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.blue,
+            ),
+            textAlign: TextAlign.center,
+          ),
           textFormLogin(),
           textFormFieldSenha(),
           containerButton(context),
+          cadastroForm(context),
         ],
       ),
     );
   }
 
-  TextFormField textFormLogin() {
-    return TextFormField(
-        controller: _tLogin,
-        validator: _validateLogin,
-        keyboardType: TextInputType.text,
-        style: TextStyle(color: Colors.black),
-        decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: "Login",
-            labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
-            hintText: "Informe o login"));
+  Container textFormLogin() {
+    return Container(
+        padding: EdgeInsets.all(10),
+        child: TextFormField(
+            controller: _tLogin,
+            validator: _validateLogin,
+            keyboardType: TextInputType.text,
+            style: TextStyle(color: Colors.black),
+            decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "CPF",
+                labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
+                hintText: "Informe o login")));
   }
 
-  TextFormField textFormFieldSenha() {
-    return TextFormField(
-      controller: _tSenha,
-      validator: _validateSenha,
-      obscureText: true,
-      keyboardType: TextInputType.visiblePassword,
-      style: TextStyle(color: Colors.black),
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: "Senha",
-        labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
-        hintText: "Informe a senha",
-      ),
-    );
+  Container textFormFieldSenha() {
+    return Container(
+        padding: EdgeInsets.all(10),
+        child: TextFormField(
+          controller: _tSenha,
+          validator: _validateSenha,
+          obscureText: true,
+          keyboardType: TextInputType.visiblePassword,
+          style: TextStyle(color: Colors.black),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: "Senha",
+            labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
+            hintText: "Informe a senha",
+          ),
+        ));
   }
 
   _onClickLogin(BuildContext context) {
@@ -86,17 +102,34 @@ class LoginPage extends StatelessWidget {
 
   Container containerButton(BuildContext context) {
     return Container(
-      height: 40.0,
-      margin: EdgeInsets.only(top: 10),
-      child: RaisedButton(
-        color: Colors.blue,
-        child: Text(
-          "Login",
-          style: TextStyle(color: Colors.white, fontSize: 30.0),
-        ),
+      padding: EdgeInsets.all(5),
+      child: ElevatedButton(
         onPressed: () {
           _onClickLogin(context);
         },
+        style: style,
+        child: Text('Login'),
+      ),
+    );
+  }
+
+  Container cadastroForm(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text('Ainda Não tem cadastro ?'),
+          FlatButton(
+            textColor: Colors.blue,
+            child: Text(
+              'Cadastrar',
+              style: TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.pushNamed(context, '/cadastro');
+            },
+          ),
+        ],
       ),
     );
   }
