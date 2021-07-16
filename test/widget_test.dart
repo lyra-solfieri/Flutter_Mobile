@@ -20,6 +20,16 @@ void main() {
     var resultado = LoginPage().validateLogin("");
     expect(resultado, "Informe o login");
   });
+
+  test("Verifica se a senha está vazia", () {
+    var resultado = LoginPage().validateSenha("");
+    expect(resultado, "Informe a senha");
+  });
+
+  test("verifica o tamanho da senha", () {
+    var resultado = LoginPage().validateSenha("text");
+    expect(resultado, "A senha deve possui mais de 7 caracteres");
+  });
 }
 
 /* 

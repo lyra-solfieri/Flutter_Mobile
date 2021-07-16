@@ -24,12 +24,16 @@ class LoginPage extends StatelessWidget {
     if (text.isEmpty) {
       return "Informe o login";
     }
+
     return null;
   }
 
   String validateSenha(String text) {
     if (text.isEmpty) {
       return "Informe a senha";
+    }
+    if (text.length < 7) {
+      return "A senha deve possui mais de 7 caracteres";
     }
     return null;
   }
