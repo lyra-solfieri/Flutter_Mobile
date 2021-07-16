@@ -20,14 +20,14 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  String _validateLogin(String text) {
+  String validateLogin(String text) {
     if (text.isEmpty) {
       return "Informe o login";
     }
     return null;
   }
 
-  String _validateSenha(String text) {
+  String validateSenha(String text) {
     if (text.isEmpty) {
       return "Informe a senha";
     }
@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: TextFormField(
             controller: _tLogin,
-            validator: _validateLogin,
+            validator: validateLogin,
             keyboardType: TextInputType.text,
             style: TextStyle(color: Colors.black),
             decoration: InputDecoration(
@@ -76,7 +76,7 @@ class LoginPage extends StatelessWidget {
         padding: EdgeInsets.all(10),
         child: TextFormField(
           controller: _tSenha,
-          validator: _validateSenha,
+          validator: validateSenha,
           obscureText: true,
           keyboardType: TextInputType.visiblePassword,
           style: TextStyle(color: Colors.black),
